@@ -1,0 +1,36 @@
+version: '2'
+services:
+    gracc-collector:
+        image: opensciencegrid/gracc-collector:1.1.5
+        environment:
+            - GRACC_LOGLEVEL=info
+            - GRACC_AMQP_EXCHANGE=gracc.${GRACC_STREAM}.raw
+            - GRACC_AMQP_HOST=${AMQP_HOST}
+            - GRACC_AMQP_PORT=${AMQP_PORT}
+            - GRACC_AMQP_SCHEME=${AMQP_SCHEME}
+            - GRACC_AMQP_USER=${AMQP_USER}
+            - GRACC_AMQP_PASSWORD=${AMQP_PASSWORD}
+            - GRACC_AMQP_VHOST=${AMQP_VHOST}
+            - GRACC_AMQP_FORMAT=json
+            - GRACC_AMQP_AUTODELETE=false
+            - GRACC_AMQP_DURABLE=true
+        ports:
+            - ${GRACC_HOST_PORT}:8080
+        network_mode: bridge
+        restart: always
+    gracc-stash-raw:
+        image: opensciencegrid/gracc-stash-raw:3.2
+        env_file:
+            - .env
+        environment:
+            - AMQP_SSL=true
+        network_mode: host
+        restart: always
+    gracc-stash-summary:
+        image: opensciencegrid/gracc-stash-summary:3.1
+        env_file:
+            - .env
+        environment:
+            - AMQP_SSL=true
+        network_mode: host
+        restart: always
