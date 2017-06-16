@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -z "$1" -o -z "$2" ]; then
+    echo "usage $0 FILE SIZE"
+    exit 1
+fi
+
+FILE="$1"
+SIZE="$2"
+COLLECTOR=localhost:8888/gracc
+
+curl -XPOST  -i "$COLLECTOR/gratia-servlets/rmi?from=test&command=multiupdate&bundlesize=$SIZE" --data-urlencode "arg1@$FILE"
