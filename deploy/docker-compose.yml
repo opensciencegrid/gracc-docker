@@ -1,7 +1,7 @@
 version: '2'
 services:
     gracc-collector:
-        image: opensciencegrid/gracc-collector:1.1.5
+        image: retzkek/gracc-collector:1.1.5
         environment:
             - GRACC_LOGLEVEL=info
             - GRACC_AMQP_EXCHANGE=gracc.${GRACC_STREAM}.raw
@@ -14,26 +14,40 @@ services:
             - GRACC_AMQP_FORMAT=json
             - GRACC_AMQP_AUTODELETE=false
             - GRACC_AMQP_DURABLE=true
+        # >>> enable pprof for debugging:
+        command:
+            - /usr/bin/gracc-collector
+            - -pprof=:8081
         ports:
             - ${GRACC_HOST_PORT}:8080
+            - localhost:1${GRACC_HOST_PORT}:8081
+        # ---
+        #ports:
+        #    - ${GRACC_HOST_PORT}:8080
+        # <<<
         network_mode: bridge
         restart: always
         mem_limit: 500M
     gracc-stash-raw:
-        image: opensciencegrid/gracc-stash-raw:3.2
+        image: opensciencegrid/gracc-stash-raw:3.3
         env_file:
             - .env
         environment:
             - AMQP_SSL=true
         network_mode: host
         restart: always
-        mem_limit: 1500M
     gracc-stash-summary:
-        image: opensciencegrid/gracc-stash-summary:3.1
+        image: retzkek/gracc-stash-summary:3.1
         env_file:
             - .env
         environment:
             - AMQP_SSL=true
         network_mode: host
         restart: always
-        mem_limit: 1500M
+    gracc-request:
+        image: opensciencegrid/gracc-request:v3.7.2
+        volumes:
+        - ./gracc-request.toml:/etc/graccreq/config.d/gracc-request.toml
+        command: /usr/bin/graccreq -c /etc/graccreq/config.d/gracc-request.toml
+        restart: always
+        network_mode: host
