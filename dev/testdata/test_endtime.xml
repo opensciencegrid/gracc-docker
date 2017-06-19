@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordEnvelope>
+<JobUsageRecord xmlns="http://www.gridforum.org/2003/ur-wg" xmlns:urwg="http://www.gridforum.org/2003/ur-wg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gridforum.org/2003/ur-wg file:///u:/OSG/urwg-schema.11.xsd">
+<RecordIdentity urwg:createTime="2017-06-15T20:44:08Z" urwg:recordId="red-gw1.unl.edu:609966.27649"/>
+<JobIdentity>
+    <GlobalJobId>condor.red-gw1.unl.edu#446995.0#1494223999</GlobalJobId>
+    <LocalJobId>446995</LocalJobId>
+</JobIdentity>
+<UserIdentity>
+    <LocalUserId>cmsprod</LocalUserId>
+    <GlobalUsername>cmsprod@unl.edu</GlobalUsername>
+    <DN>/DC=ch/DC=cern/OU=computers/CN=cmspilot02/vocms080.cern.ch</DN>
+    <VOName>/cms/Role=pilot/Capability=NULL</VOName>
+    <ReportableVOName>cms</ReportableVOName>
+</UserIdentity>
+    <JobName>red-gw1.unl.edu#446995.0#1494223999</JobName>
+    <MachineName>red-gw1.unl.edu</MachineName>
+    <SubmitHost>red-gw1.unl.edu</SubmitHost>
+    <Status urwg:description="Condor Exit Status">0</Status>
+    <WallDuration urwg:description="Was entered in seconds">P1DT7H58M10.0S</WallDuration>
+    <TimeDuration urwg:type="RemoteUserCpu">P3DT18H41M59.0S</TimeDuration>
+    <TimeDuration urwg:type="LocalUserCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="RemoteSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="LocalSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CumulativeSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedTime">PT0S</TimeDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="system">PT0S</CpuDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="user">P3DT18H41M59.0S</CpuDuration>
+    <StartTime urwg:description="Was entered in seconds">2017-05-06T19:39:56Z</StartTime>
+    <Host primary="true">red-c1703.unl.edu</Host>
+    <Queue urwg:description="Condor's JobUniverse field">5</Queue>
+    <NodeCount urwg:metric="max">1</NodeCount>
+    <Processors urwg:metric="max">8</Processors>
+    <Resource urwg:description="CondorMyType">Job</Resource>
+    <Resource urwg:description="AccountingGroup">cms.wlcgpledge.pilot.cmsprod</Resource>
+    <Resource urwg:description="ExitBySignal">false</Resource>
+    <Resource urwg:description="condor.JobStatus">3</Resource>
+    <Network urwg:description="NetworkOutputMb" urwg:metric="NetworkOutputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">1951.28674603</Network>
+    <Network urwg:description="NetworkInputMb" urwg:metric="NetworkInputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">603.834850311</Network>
+    <Network urwg:metric="total" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">2555.12159634</Network>
+    <ProbeName>condor:red-gw1.unl.edu</ProbeName>
+    <SiteName>red-gateway1</SiteName>
+    <Grid>OSG</Grid>
+    <Njobs>1</Njobs>
+    <Resource urwg:description="ResourceType">Batch</Resource>
+</JobUsageRecord>
+<JobUsageRecord xmlns="http://www.gridforum.org/2003/ur-wg" xmlns:urwg="http://www.gridforum.org/2003/ur-wg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gridforum.org/2003/ur-wg file:///u:/OSG/urwg-schema.11.xsd">
+<RecordIdentity urwg:createTime="2017-06-15T20:44:08Z" urwg:recordId="red-gw1.unl.edu:609966.27649"/>
+<JobIdentity>
+    <GlobalJobId>condor.red-gw1.unl.edu#446995.0#1494223999</GlobalJobId>
+    <LocalJobId>446995.newstart</LocalJobId>
+</JobIdentity>
+<UserIdentity>
+    <LocalUserId>cmsprod</LocalUserId>
+    <GlobalUsername>cmsprod@unl.edu</GlobalUsername>
+    <DN>/DC=ch/DC=cern/OU=computers/CN=cmspilot02/vocms080.cern.ch</DN>
+    <VOName>/cms/Role=pilot/Capability=NULL</VOName>
+    <ReportableVOName>cms</ReportableVOName>
+</UserIdentity>
+    <JobName>red-gw1.unl.edu#446995.0#1494223999</JobName>
+    <MachineName>red-gw1.unl.edu</MachineName>
+    <SubmitHost>red-gw1.unl.edu</SubmitHost>
+    <Status urwg:description="Condor Exit Status">0</Status>
+    <WallDuration urwg:description="Was entered in seconds">P100DT7H58M10.0S</WallDuration>
+    <TimeDuration urwg:type="RemoteUserCpu">P3DT18H41M59.0S</TimeDuration>
+    <TimeDuration urwg:type="LocalUserCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="RemoteSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="LocalSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CumulativeSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedTime">PT0S</TimeDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="system">PT0S</CpuDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="user">P3DT18H41M59.0S</CpuDuration>
+    <StartTime urwg:description="Was entered in seconds">2017-05-06T19:39:56Z</StartTime>
+    <Host primary="true">red-c1703.unl.edu</Host>
+    <Queue urwg:description="Condor's JobUniverse field">5</Queue>
+    <NodeCount urwg:metric="max">1</NodeCount>
+    <Processors urwg:metric="max">8</Processors>
+    <Resource urwg:description="CondorMyType">Job</Resource>
+    <Resource urwg:description="AccountingGroup">cms.wlcgpledge.pilot.cmsprod</Resource>
+    <Resource urwg:description="ExitBySignal">false</Resource>
+    <Resource urwg:description="condor.JobStatus">3</Resource>
+    <Network urwg:description="NetworkOutputMb" urwg:metric="NetworkOutputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">1951.28674603</Network>
+    <Network urwg:description="NetworkInputMb" urwg:metric="NetworkInputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">603.834850311</Network>
+    <Network urwg:metric="total" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">2555.12159634</Network>
+    <ProbeName>condor:red-gw1.unl.edu</ProbeName>
+    <SiteName>red-gateway1</SiteName>
+    <Grid>OSG</Grid>
+    <Njobs>1</Njobs>
+    <Resource urwg:description="ResourceType">Batch</Resource>
+</JobUsageRecord>
+<JobUsageRecord xmlns="http://www.gridforum.org/2003/ur-wg" xmlns:urwg="http://www.gridforum.org/2003/ur-wg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gridforum.org/2003/ur-wg file:///u:/OSG/urwg-schema.11.xsd">
+<RecordIdentity urwg:createTime="2017-06-15T20:44:08Z" urwg:recordId="red-gw1.unl.edu:609966.27649"/>
+<JobIdentity>
+    <GlobalJobId>condor.red-gw1.unl.edu#446995.0#1494223999</GlobalJobId>
+    <LocalJobId>446995.nostart</LocalJobId>
+</JobIdentity>
+<UserIdentity>
+    <LocalUserId>cmsprod</LocalUserId>
+    <GlobalUsername>cmsprod@unl.edu</GlobalUsername>
+    <DN>/DC=ch/DC=cern/OU=computers/CN=cmspilot02/vocms080.cern.ch</DN>
+    <VOName>/cms/Role=pilot/Capability=NULL</VOName>
+    <ReportableVOName>cms</ReportableVOName>
+</UserIdentity>
+    <JobName>red-gw1.unl.edu#446995.0#1494223999</JobName>
+    <MachineName>red-gw1.unl.edu</MachineName>
+    <SubmitHost>red-gw1.unl.edu</SubmitHost>
+    <Status urwg:description="Condor Exit Status">0</Status>
+    <WallDuration urwg:description="Was entered in seconds">P1DT7H58M10.0S</WallDuration>
+    <TimeDuration urwg:type="RemoteUserCpu">P3DT18H41M59.0S</TimeDuration>
+    <TimeDuration urwg:type="LocalUserCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="RemoteSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="LocalSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CumulativeSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedTime">PT0S</TimeDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="system">PT0S</CpuDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="user">P3DT18H41M59.0S</CpuDuration>
+    <Host primary="true">red-c1703.unl.edu</Host>
+    <Queue urwg:description="Condor's JobUniverse field">5</Queue>
+    <NodeCount urwg:metric="max">1</NodeCount>
+    <Processors urwg:metric="max">8</Processors>
+    <Resource urwg:description="CondorMyType">Job</Resource>
+    <Resource urwg:description="AccountingGroup">cms.wlcgpledge.pilot.cmsprod</Resource>
+    <Resource urwg:description="ExitBySignal">false</Resource>
+    <Resource urwg:description="condor.JobStatus">3</Resource>
+    <Network urwg:description="NetworkOutputMb" urwg:metric="NetworkOutputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">1951.28674603</Network>
+    <Network urwg:description="NetworkInputMb" urwg:metric="NetworkInputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">603.834850311</Network>
+    <Network urwg:metric="total" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">2555.12159634</Network>
+    <ProbeName>condor:red-gw1.unl.edu</ProbeName>
+    <SiteName>red-gateway1</SiteName>
+    <Grid>OSG</Grid>
+    <Njobs>1</Njobs>
+    <Resource urwg:description="ResourceType">Batch</Resource>
+</JobUsageRecord>
+<JobUsageRecord xmlns="http://www.gridforum.org/2003/ur-wg" xmlns:urwg="http://www.gridforum.org/2003/ur-wg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gridforum.org/2003/ur-wg file:///u:/OSG/urwg-schema.11.xsd">
+<RecordIdentity urwg:createTime="2017-06-15T20:44:08Z" urwg:recordId="red-gw1.unl.edu:609966.27649"/>
+<JobIdentity>
+    <GlobalJobId>condor.red-gw1.unl.edu#446995.0#1494223999</GlobalJobId>
+    <LocalJobId>446995.nowall</LocalJobId>
+</JobIdentity>
+<UserIdentity>
+    <LocalUserId>cmsprod</LocalUserId>
+    <GlobalUsername>cmsprod@unl.edu</GlobalUsername>
+    <DN>/DC=ch/DC=cern/OU=computers/CN=cmspilot02/vocms080.cern.ch</DN>
+    <VOName>/cms/Role=pilot/Capability=NULL</VOName>
+    <ReportableVOName>cms</ReportableVOName>
+</UserIdentity>
+    <JobName>red-gw1.unl.edu#446995.0#1494223999</JobName>
+    <MachineName>red-gw1.unl.edu</MachineName>
+    <SubmitHost>red-gw1.unl.edu</SubmitHost>
+    <Status urwg:description="Condor Exit Status">0</Status>
+    <TimeDuration urwg:type="RemoteUserCpu">P3DT18H41M59.0S</TimeDuration>
+    <TimeDuration urwg:type="LocalUserCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="RemoteSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="LocalSysCpu">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CumulativeSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedSuspensionTime">PT0S</TimeDuration>
+    <TimeDuration urwg:type="CommittedTime">PT0S</TimeDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="system">PT0S</CpuDuration>
+    <CpuDuration urwg:description="Was entered in seconds" urwg:usageType="user">P3DT18H41M59.0S</CpuDuration>
+    <StartTime urwg:description="Was entered in seconds">2017-05-06T19:39:56Z</StartTime>
+    <Host primary="true">red-c1703.unl.edu</Host>
+    <Queue urwg:description="Condor's JobUniverse field">5</Queue>
+    <NodeCount urwg:metric="max">1</NodeCount>
+    <Processors urwg:metric="max">8</Processors>
+    <Resource urwg:description="CondorMyType">Job</Resource>
+    <Resource urwg:description="AccountingGroup">cms.wlcgpledge.pilot.cmsprod</Resource>
+    <Resource urwg:description="ExitBySignal">false</Resource>
+    <Resource urwg:description="condor.JobStatus">3</Resource>
+    <Network urwg:description="NetworkOutputMb" urwg:metric="NetworkOutputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">1951.28674603</Network>
+    <Network urwg:description="NetworkInputMb" urwg:metric="NetworkInputMb" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">603.834850311</Network>
+    <Network urwg:metric="total" urwg:phaseUnit="P1DT7H58M10.0S" urwg:storageUnit="b">2555.12159634</Network>
+    <ProbeName>condor:red-gw1.unl.edu</ProbeName>
+    <SiteName>red-gateway1</SiteName>
+    <Grid>OSG</Grid>
+    <Njobs>1</Njobs>
+    <Resource urwg:description="ResourceType">Batch</Resource>
+</JobUsageRecord>
+</RecordEnvelope>
