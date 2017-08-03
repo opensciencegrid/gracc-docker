@@ -29,7 +29,7 @@ services:
         restart: always
         mem_limit: 500M
     gracc-stash-raw:
-        image: opensciencegrid/gracc-stash-raw:3.3
+        image: opensciencegrid/gracc-stash-raw:3.3.1
         env_file:
             - .env
         environment:
@@ -47,7 +47,17 @@ services:
     gracc-request:
         image: opensciencegrid/gracc-request:v3.7.2
         volumes:
-        - ./gracc-request.toml:/etc/graccreq/config.d/gracc-request.toml
+        - ./gracc-request.toml:/etc/graccreq/config.d/gracc-request.toml 
         command: /usr/bin/graccreq -c /etc/graccreq/config.d/gracc-request.toml
         restart: always
         network_mode: host
+    logstash-glidein:
+        image: docker.elastic.co/logstash/logstash:5.5.1
+        volumes:
+        - ./glidein-logs-logstash.conf:/usr/share/logstash/pipeline/glidein-logs-logstash.conf
+        network_mode: host
+        restart: always
+        ports:
+            - 5044
+
+
