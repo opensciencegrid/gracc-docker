@@ -1,0 +1,63 @@
+version: '2'
+services:
+#    prometheus:
+#        image: prom/prometheus
+#        volumes:
+#            - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#            - /data/prometheus:/prometheus
+#        command:
+#        - -web.external-url=https://gracc.opensciencegrid.org/prometheus
+#        ports:
+#        - 9090:9090
+#    cadvisor:
+#        image: google/cadvisor
+#        volumes:
+#            - /:/rootfs:ro
+#            - /var/run:/var/run:rw
+#            - /sys:/sys:ro
+#            - /var/lib/docker/:/var/lib/docker:ro
+#    prometheus-elasticsearch:
+#        image: thedutchselection/prometheus_elasticsearch_exporter:0.3.0
+#        environment:
+#        - ELASTICSEARCH_URI=http://elasticsearch:9200
+    prometheus-rabbitmq:
+        image: kbudde/rabbitmq-exporter
+        environment:
+            - RABBIT_URL=https://${AMQP_HOST}:15671
+            - RABBIT_USER=${AMQP_USER}
+            - RABBIT_PASSWORD=${AMQP_PASSWORD}
+            - PUBLISH_PORT=9112
+            - SKIPVERIFY=true
+        ports:
+            - 9112:9112
+        network_mode: bridge
+    prometheus-rabbitmq-hosted:
+        image: kbudde/rabbitmq-exporter
+        environment:
+            - RABBIT_URL=https://${AMQP_HOST2}
+            - RABBIT_USER=${AMQP_USER2}
+            - RABBIT_PASSWORD=${AMQP_PASSWORD2}
+            - PUBLISH_PORT=9113
+            - SKIPVERIFY=true
+        ports:
+            - 9113:9113
+        network_mode: bridge
+#    prometheus-graphite:
+#        image: prom/graphite-exporter
+#        ports:
+#            - 9109:9108
+#            - 2003:9109
+#            - 2003:9109/udp
+    logstash-cvmfs-sync-logs:
+       image: docker.elastic.co/logstash/logstash:5.5.1
+       volumes:
+       - ./hcc-cvmfs-repo.logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+#       - /etc/grid-security/gracc.opensciencegrid.org-cert.pem:/etc/gracc.opensciencegrid.org-cert.pem
+#       - /etc/grid-security/gracc.opensciencegrid.org-key-pkcs8.key:/etc/gracc.opensciencegrid.org-key-pkcs8.key
+       - ./cilogon-osg.crt:/etc/cilogon-osg.crt
+       environment:
+       - XPACK_MONITORING_ENABLED=false
+       network_mode: host
+       restart: always
+       ports:
+           - 8560
