@@ -4,10 +4,7 @@
 # scheme://username:password@host:port/vhost
 #url = "amqps://amqpusername:amqppassword@amqp.exapmle.com:5671/vhost"
 
-#url = "amqp://gratiav2:gratiav2pass@event-itb.grid.iu.edu:5672/gratia"
-
-#url = "amqps://gracc:%3C9zLh.qC%24CVme6L%5B@event.grid.iu.edu:5671/gracc"
-url = "amqps://gracc:SAmGt7qC0izo5V4ptm99@clever-turkey.rmq.cloudamqp.com:5671/gracc?socket_timeout=10&connection_attempts=5"
+url = "amqps://amqpusername:amqppassword@clever-turkey.rmq.cloudamqp.com:5671/gracc?socket_timeout=10&connection_attempts=5"
 
 exchange = 'gracc.osg.requests'
 queue = 'gracc.osg.requests'
