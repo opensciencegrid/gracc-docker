@@ -21,10 +21,6 @@ services:
         ports:
             - ${GRACC_HOST_PORT}:8080
             - 127.0.0.1:1${GRACC_HOST_PORT}:8081
-        # ---
-        #ports:
-        #    - ${GRACC_HOST_PORT}:8080
-        # <<<
         network_mode: bridge
         restart: always
         mem_limit: 500M
