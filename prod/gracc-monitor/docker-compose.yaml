@@ -1,0 +1,35 @@
+version: '2'
+services:
+    prometheus-rabbitmq:
+        image: kbudde/rabbitmq-exporter
+        environment:
+            - RABBIT_URL=https://${AMQP_HOST}:15671
+            - RABBIT_USER=${AMQP_USER}
+            - RABBIT_PASSWORD=${AMQP_PASSWORD}
+            - PUBLISH_PORT=9112
+            - SKIPVERIFY=true
+        ports:
+            - 9112:9112
+        network_mode: bridge
+    prometheus-rabbitmq-hosted:
+        image: kbudde/rabbitmq-exporter
+        environment:
+            - RABBIT_URL=https://${AMQP_HOST2}
+            - RABBIT_USER=${AMQP_USER2}
+            - RABBIT_PASSWORD=${AMQP_PASSWORD2}
+            - PUBLISH_PORT=9113
+            - SKIPVERIFY=true
+        ports:
+            - 9113:9113
+        network_mode: bridge
+    logstash-cvmfs-sync-logs:
+       image: docker.elastic.co/logstash/logstash:5.5.1
+       volumes:
+       - ./hcc-cvmfs-repo.logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+       - ./cilogon-osg.crt:/etc/cilogon-osg.crt
+       environment:
+       - XPACK_MONITORING_ENABLED=false
+       network_mode: host
+       restart: always
+       ports:
+           - 8560

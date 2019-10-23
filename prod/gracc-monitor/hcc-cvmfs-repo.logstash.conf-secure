@@ -1,0 +1,28 @@
+input {
+  beats {
+    port => 8560
+#    ssl => true
+#    ssl_certificate_authorities => ["/etc/cilogon-osg.crt"]
+#    ssl_certificate => "/etc/gracc.opensciencegrid.org-cert.pem"
+#    ssl_key => "/etc/gracc.opensciencegrid.org-key-pkcs8.key"
+#    ssl_verify_mode => "force_peer"
+  }
+}
+
+# The filter part of this file is commented out to indicate that it is
+# optional.
+#filter {
+#  json{
+#      source => "message"
+#  }
+#}
+
+output {
+  elasticsearch {
+    hosts => "localhost:9200"
+    manage_template => false
+    index => "cvmfs-sync-logs-%{+YYYY.MM.dd}" 
+    document_type => "cvmfs-sync-log" 
+  }
+}
+
