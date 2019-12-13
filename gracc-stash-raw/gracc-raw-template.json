@@ -12,7 +12,6 @@
         }
     },
     "mappings" : {
-        "doc" : {
             "dynamic_templates" : [ {
                 "raw_fields" : {
                     "mapping" : {
@@ -349,7 +348,7 @@
                         "type" : "keyword"
                     }
                 }
-        }
+        
     },
     "aliases" : { }
 }
