@@ -12,7 +12,6 @@
         }
     },
     "mappings" : {
-        "doc" : {
             "dynamic_templates" : [ {
                 "string_fields" : {
                     "mapping" : {
@@ -70,12 +69,10 @@
                         "format" : "strict_date_optional_time||epoch_millis"
                     },
                     "@version" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "CommonName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "CoreHours" : {
                         "type" : "double"
@@ -87,171 +84,135 @@
                         "type" : "double"
                     },
                     "CpuDuration_system_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "CpuDuration_user" : {
                         "type" : "double"
                     },
                     "CpuDuration_user_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "CreateTime" : {
                         "type" : "date",
                         "format" : "strict_date_optional_time||epoch_millis"
                     },
                     "DN" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "EndTime" : {
                         "type" : "date",
                         "format" : "strict_date_optional_time||epoch_millis"
                     },
                     "GlobalJobId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "GlobalUsername" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Grid" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Grid_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "Host" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Host_description" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "JobName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "LocalJobId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "LocalUserId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "MachineName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "MachineName_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "Memory" : {
                         "type" : "double"
                     },
                     "Memory_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "Memory_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Memory_phaseUnit" : {
                         "type" : "double"
                     },
                     "Memory_storageUnit" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Network" : {
                         "type" : "double"
                     },
                     "Network_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "Network_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Network_phaseUnit" : {
                         "type" : "double"
                     },
                     "Network_storageUnit" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "NodeCount" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "NodeCount_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "PayloadSiteName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "ProbeName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Processors" : {
                         "type" : "long"
                     },
                     "Processors_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "ProjectName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "ProjectName_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "Queue" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Queue_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
-                    "RawXML" : {
-                        "type" : "string",
-                        "index" : "no",
-                        "norms" : {
-                            "enabled" : false
-                        },
-                        "fielddata" : {
-                            "format" : "disabled"
-                        },
                     "RecordId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "ReportableVOName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "ResourceType" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_AccountingGroup" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_CondorMyType" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_Destination" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_ExitBySignal" : {
                         "type" : "boolean"
@@ -263,34 +224,28 @@
                         "type" : "long"
                     },
                     "Resource_IsNew" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_LocalUserGroup" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_Protocol" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_Source" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Resource_condor-JobStatus" : {
                         "type" : "long"
                     },
                     "ServiceLevel" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "ServiceLevel_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "SiteName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "StartTime" : {
                         "type" : "date",
@@ -300,25 +255,22 @@
                         "type" : "long"
                     },
                     "Status_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "SubmitHost" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Swap" : {
                         "type" : "double"
                     },
                     "Swap_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "Swap_phaseUnit" : {
                         "type" : "long"
                     },
                     "Swap_storageUnit" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "TimeDuration_CommittedSuspensionTime" : {
                         "type" : "double"
@@ -346,35 +298,32 @@
                         "format" : "strict_date_optional_time||epoch_millis"
                     },
                     "TimeInstant_submit_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "TimeInstant_unknown" : {
                         "type" : "date",
                         "format" : "strict_date_optional_time||epoch_millis"
                     },
                     "TimeInstant_unknown_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "VOName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     },
                     "WallDuration" : {
                         "type" : "long"
                     },
                     "WallDuration_description" : {
-                        "type" : "string"
+                        "type" : "text"
                     },
                     "checksum" : {
-                        "type" : "string",
-                        "index" : "no"
+                        "type" : "text",
+                        "index" : "false"
                     },
                     "type" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
+                        "type" : "keyword"
                     }
                 }
-        }
     },
     "aliases" : { }
 }
