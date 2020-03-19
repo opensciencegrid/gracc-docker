@@ -228,7 +228,8 @@
                         },
                         "fielddata" : {
                             "format" : "disabled"
-                        },
+                        }
+                    },
                     "RecordId" : {
                         "type" : "string",
                         "index" : "not_analyzed"
