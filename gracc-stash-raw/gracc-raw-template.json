@@ -276,6 +276,9 @@
                     "StartTime" : {
                         "type" : "date"
                     },
+                    "QueueTime" : {
+                        "type" : "date"
+                    },
                     "Status" : {
                         "type" : "keyword"
                     },
