@@ -1,5 +1,5 @@
 {
-    "index_patterns" : "gracc.*.summary3-*",
+    "index_patterns" : "gracc.*.summary4-*",
     "settings" : {
         "index" : {
             "translog" : {
