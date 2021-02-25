@@ -19,7 +19,6 @@
             {
                 "string_fields": {
                     "mapping": {
-                        "omit_norms": true,
                         "type": "keyword"
                     },
                     "match_mapping_type": "string",
@@ -330,7 +329,10 @@
             },
             "WallDuration_description": {
                 "type": "text"
-            }
+            },
+            "GPUs": {
+                "type": "long"
+            },
         }
     },
     "aliases": {}
