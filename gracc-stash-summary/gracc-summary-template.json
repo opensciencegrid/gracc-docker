@@ -1,381 +1,337 @@
 {
-    "index_patterns" : "gracc.*.summary4-*",
-    "settings" : {
-        "index" : {
-            "translog" : {
-                "sync_interval" : "5s",
-                "durability" : "async"
+    "order": 0,
+    "index_patterns": [
+        "gracc.*.summary4-*"
+    ],
+    "settings": {
+        "index": {
+            "refresh_interval": "60s",
+            "number_of_shards": "3",
+            "translog": {
+                "sync_interval": "5s",
+                "durability": "async"
             },
-            "number_of_shards" : 3,
-            "number_of_replicas" : 1,
-            "refresh_interval" : "60s"
+            "number_of_replicas": "1"
         }
     },
-    "mappings" : {
-        "doc" : {
-            "dynamic_templates" : [ {
-                "string_fields" : {
-                    "mapping" : {
-                        "index" : "not_analyzed",
-                        "omit_norms" : true,
-                        "type" : "string"
+    "mappings": {
+        "dynamic_templates": [
+            {
+                "string_fields": {
+                    "mapping": {
+                        "omit_norms": true,
+                        "type": "keyword"
                     },
-                    "match" : "*",
-                    "match_mapping_type" : "string"
+                    "match_mapping_type": "string",
+                    "match": "*"
                 }
-            }, {
-                "float_fields" : {
-                    "mapping" : {
-                        "type" : "float",
-                        "doc_values" : true
+            },
+            {
+                "float_fields": {
+                    "mapping": {
+                        "type": "float",
+                        "doc_values": true
                     },
-                    "match" : "*",
-                    "match_mapping_type" : "double"
+                    "match_mapping_type": "double",
+                    "match": "*"
                 }
-            }, {
-                "double_fields" : {
-                    "mapping" : {
-                        "type" : "double",
-                        "doc_values" : true
+            },
+            {
+                "double_fields": {
+                    "mapping": {
+                        "type": "double",
+                        "doc_values": true
                     },
-                    "match" : "*",
-                    "match_mapping_type" : "double"
+                    "match_mapping_type": "double",
+                    "match": "*"
                 }
-            }, {
-                "long_fields" : {
-                    "mapping" : {
-                        "type" : "long",
-                        "doc_values" : true
+            },
+            {
+                "long_fields": {
+                    "mapping": {
+                        "type": "long",
+                        "doc_values": true
                     },
-                    "match" : "*",
-                    "match_mapping_type" : "long"
+                    "match_mapping_type": "long",
+                    "match": "*"
                 }
-            }, {
-                "date_fields" : {
-                    "mapping" : {
-                        "type" : "date",
-                        "doc_values" : true
+            },
+            {
+                "date_fields": {
+                    "mapping": {
+                        "type": "date",
+                        "doc_values": true
                     },
-                    "match" : "*",
-                    "match_mapping_type" : "date"
+                    "match_mapping_type": "date",
+                    "match": "*"
                 }
-            } ],
-                "properties" : {
-                    "@received" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "@timestamp" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "@version" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "CommonName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "CoreHours" : {
-                        "type" : "double"
-                    },
-                    "CpuDuration" : {
-                        "type" : "double"
-                    },
-                    "CpuDuration_system" : {
-                        "type" : "double"
-                    },
-                    "CpuDuration_system_description" : {
-                        "type" : "string"
-                    },
-                    "CpuDuration_user" : {
-                        "type" : "double"
-                    },
-                    "CpuDuration_user_description" : {
-                        "type" : "string"
-                    },
-                    "CreateTime" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "DN" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "EndTime" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "GlobalJobId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "GlobalUsername" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Grid" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Grid_description" : {
-                        "type" : "string"
-                    },
-                    "Host" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Host_description" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "JobName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "LocalJobId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "LocalUserId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "MachineName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "MachineName_description" : {
-                        "type" : "string"
-                    },
-                    "Memory" : {
-                        "type" : "double"
-                    },
-                    "Memory_description" : {
-                        "type" : "string"
-                    },
-                    "Memory_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Memory_phaseUnit" : {
-                        "type" : "double"
-                    },
-                    "Memory_storageUnit" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Network" : {
-                        "type" : "double"
-                    },
-                    "Network_description" : {
-                        "type" : "string"
-                    },
-                    "Network_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Network_phaseUnit" : {
-                        "type" : "double"
-                    },
-                    "Network_storageUnit" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "NodeCount" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "NodeCount_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "PayloadSiteName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "ProbeName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Processors" : {
-                        "type" : "long"
-                    },
-                    "Processors_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "ProjectName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "ProjectName_description" : {
-                        "type" : "string"
-                    },
-                    "Queue" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Queue_description" : {
-                        "type" : "string"
-                    },
-                    "RawXML" : {
-                        "type" : "string",
-                        "index" : "no",
-                        "norms" : {
-                            "enabled" : false
-                        },
-                        "fielddata" : {
-                            "format" : "disabled"
-                        }
-                    },
-                    "RecordId" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "ReportableVOName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "ResourceType" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_AccountingGroup" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_CondorMyType" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_Destination" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_ExitBySignal" : {
-                        "type" : "boolean"
-                    },
-                    "Resource_ExitCode" : {
-                        "type" : "long"
-                    },
-                    "Resource_ExitSignal" : {
-                        "type" : "long"
-                    },
-                    "Resource_IsNew" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_LocalUserGroup" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_Protocol" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_Source" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Resource_condor-JobStatus" : {
-                        "type" : "long"
-                    },
-                    "ServiceLevel" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "ServiceLevel_description" : {
-                        "type" : "string"
-                    },
-                    "SiteName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "StartTime" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "Status" : {
-                        "type" : "long"
-                    },
-                    "Status_description" : {
-                        "type" : "string"
-                    },
-                    "SubmitHost" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Swap" : {
-                        "type" : "double"
-                    },
-                    "Swap_metric" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "Swap_phaseUnit" : {
-                        "type" : "long"
-                    },
-                    "Swap_storageUnit" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "TimeDuration_CommittedSuspensionTime" : {
-                        "type" : "double"
-                    },
-                    "TimeDuration_CommittedTime" : {
-                        "type" : "double"
-                    },
-                    "TimeDuration_CumulativeSuspensionTime" : {
-                        "type" : "double"
-                    },
-                    "TimeDuration_LocalSysCpu" : {
-                        "type" : "double"
-                    },
-                    "TimeDuration_LocalUserCpu" : {
-                        "type" : "double"
-                    },
-                    "TimeDuration_RemoteSysCpu" : {
-                        "type" : "double"
-                    },
-                    "TimeDuration_RemoteUserCpu" : {
-                        "type" : "double"
-                    },
-                    "TimeInstant_submit" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "TimeInstant_submit_description" : {
-                        "type" : "string"
-                    },
-                    "TimeInstant_unknown" : {
-                        "type" : "date",
-                        "format" : "strict_date_optional_time||epoch_millis"
-                    },
-                    "TimeInstant_unknown_description" : {
-                        "type" : "string"
-                    },
-                    "VOName" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    },
-                    "WallDuration" : {
-                        "type" : "long"
-                    },
-                    "WallDuration_description" : {
-                        "type" : "string"
-                    },
-                    "checksum" : {
-                        "type" : "string",
-                        "index" : "no"
-                    },
-                    "type" : {
-                        "type" : "string",
-                        "index" : "not_analyzed"
-                    }
-                }
+            }
+        ],
+        "properties": {
+            "SubmitHost": {
+                "type": "keyword"
+            },
+            "SiteName": {
+                "type": "keyword"
+            },
+            "Queue_description": {
+                "type": "text"
+            },
+            "CoreHours": {
+                "type": "double"
+            },
+            "Memory": {
+                "type": "double"
+            },
+            "DN": {
+                "type": "keyword"
+            },
+            "TimeDuration_CommittedSuspensionTime": {
+                "type": "double"
+            },
+            "type": {
+                "type": "keyword"
+            },
+            "Swap": {
+                "type": "double"
+            },
+            "TimeDuration_RemoteSysCpu": {
+                "type": "double"
+            },
+            "Network": {
+                "type": "double"
+            },
+            "Swap_phaseUnit": {
+                "type": "long"
+            },
+            "TimeInstant_unknown": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "Network_phaseUnit": {
+                "type": "double"
+            },
+            "Status_description": {
+                "type": "text"
+            },
+            "WallDuration": {
+                "type": "long"
+            },
+            "Status": {
+                "type": "long"
+            },
+            "GlobalJobId": {
+                "type": "keyword"
+            },
+            "CpuDuration_system": {
+                "type": "double"
+            },
+            "TimeDuration_CumulativeSuspensionTime": {
+                "type": "double"
+            },
+            "NodeCount": {
+                "type": "keyword"
+            },
+            "StartTime": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "Memory_description": {
+                "type": "text"
+            },
+            "GlobalUsername": {
+                "type": "keyword"
+            },
+            "Swap_storageUnit": {
+                "type": "keyword"
+            },
+            "MachineName": {
+                "type": "keyword"
+            },
+            "Resource_ExitSignal": {
+                "type": "long"
+            },
+            "Processors_metric": {
+                "type": "keyword"
+            },
+            "ProjectName_description": {
+                "type": "text"
+            },
+            "Network_metric": {
+                "type": "keyword"
+            },
+            "Processors": {
+                "type": "long"
+            },
+            "Network_description": {
+                "type": "text"
+            },
+            "ServiceLevel": {
+                "type": "keyword"
+            },
+            "Memory_phaseUnit": {
+                "type": "double"
+            },
+            "TimeDuration_CommittedTime": {
+                "type": "double"
+            },
+            "TimeInstant_submit": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "EndTime": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "ProjectName": {
+                "type": "keyword"
+            },
+            "Resource_condor-JobStatus": {
+                "type": "long"
+            },
+            "@received": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "LocalUserId": {
+                "type": "keyword"
+            },
+            "Grid": {
+                "type": "keyword"
+            },
+            "JobName": {
+                "type": "keyword"
+            },
+            "PayloadSiteName": {
+                "type": "keyword"
+            },
+            "Resource_Protocol": {
+                "type": "keyword"
+            },
+            "Resource_ExitBySignal": {
+                "type": "boolean"
+            },
+            "Swap_metric": {
+                "type": "keyword"
+            },
+            "Host_description": {
+                "type": "keyword"
+            },
+            "ProbeName": {
+                "type": "keyword"
+            },
+            "Grid_description": {
+                "type": "text"
+            },
+            "TimeDuration_LocalUserCpu": {
+                "type": "double"
+            },
+            "ServiceLevel_description": {
+                "type": "text"
+            },
+            "@version": {
+                "type": "keyword"
+            },
+            "Resource_IsNew": {
+                "type": "keyword"
+            },
+            "checksum": {
+                "index": "false",
+                "type": "text"
+            },
+            "Memory_metric": {
+                "type": "keyword"
+            },
+            "VOName": {
+                "type": "keyword"
+            },
+            "RecordId": {
+                "type": "keyword"
+            },
+            "CpuDuration": {
+                "type": "double"
+            },
+            "Queue": {
+                "type": "keyword"
+            },
+            "TimeDuration_LocalSysCpu": {
+                "type": "double"
+            },
+            "CommonName": {
+                "type": "keyword"
+            },
+            "CpuDuration_user_description": {
+                "type": "text"
+            },
+            "CpuDuration_user": {
+                "type": "double"
+            },
+            "NodeCount_metric": {
+                "type": "keyword"
+            },
+            "MachineName_description": {
+                "type": "text"
+            },
+            "CreateTime": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "TimeInstant_unknown_description": {
+                "type": "text"
+            },
+            "Host": {
+                "type": "keyword"
+            },
+            "ReportableVOName": {
+                "type": "keyword"
+            },
+            "ResourceType": {
+                "type": "keyword"
+            },
+            "TimeInstant_submit_description": {
+                "type": "text"
+            },
+            "Network_storageUnit": {
+                "type": "keyword"
+            },
+            "Resource_Destination": {
+                "type": "keyword"
+            },
+            "Memory_storageUnit": {
+                "type": "keyword"
+            },
+            "TimeDuration_RemoteUserCpu": {
+                "type": "double"
+            },
+            "LocalJobId": {
+                "type": "keyword"
+            },
+            "CpuDuration_system_description": {
+                "type": "text"
+            },
+            "Resource_AccountingGroup": {
+                "type": "keyword"
+            },
+            "@timestamp": {
+                "format": "strict_date_optional_time||epoch_millis",
+                "type": "date"
+            },
+            "Resource_Source": {
+                "type": "keyword"
+            },
+            "Resource_ExitCode": {
+                "type": "long"
+            },
+            "Resource_CondorMyType": {
+                "type": "keyword"
+            },
+            "Resource_LocalUserGroup": {
+                "type": "keyword"
+            },
+            "WallDuration_description": {
+                "type": "text"
+            }
         }
     },
-    "aliases" : { }
+    "aliases": {}
 }
