@@ -332,7 +332,7 @@
             },
             "GPUs": {
                 "type": "long"
-            },
+            }
         }
     },
     "aliases": {}
