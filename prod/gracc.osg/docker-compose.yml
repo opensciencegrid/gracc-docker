@@ -48,7 +48,7 @@ services:
         restart: always
         network_mode: host
     logstash-glidein:
-        image: docker.elastic.co/logstash/logstash:5.5.1
+        image: docker.elastic.co/logstash/logstash:6.8.21
         volumes:
         - ./glidein-logs-logstash.conf:/usr/share/logstash/pipeline/glidein-logs-logstash.conf
         - /etc/grid-security/gracc.opensciencegrid.org-cert.pem:/etc/gracc.opensciencegrid.org-cert.pem
